@@ -29,6 +29,14 @@
     <meta property="og:type" content="website">
   </head>
   <body data-home-page-title="Hello!" class="u-body u-xl-mode" data-lang="en">
+    <nav class="glass-nav" aria-label="Primary">
+      <span class="glass-nav-indicator" aria-hidden="true"></span>
+      <a href="#sec-f027">Focus</a>
+      <a href="#carousel_6c29">Values</a>
+      <a href="#sec-bead">Craft</a>
+      <a href="#carousel_17c5">Experience</a>
+      <a href="#sec-b8ff">Contact</a>
+    </nav>
     <section class="u-clearfix u-section-1" id="sec-b6ba">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -59,7 +67,6 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-align-center u-text u-text-default u-text-1">Let's talk?</h1>
                 </div>
               </div>
               <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1876" data-image-height="332">
@@ -82,7 +89,6 @@
               </div>
               <div class="u-align-center u-container-style u-layout-cell u-size-39 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-1">Core Values</h2>
                   <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/image-10.png" alt="" data-image-width="1856" data-image-height="138">
                 </div>
               </div>
@@ -99,7 +105,6 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-align-center u-text u-text-default u-text-1">What I Do?</h1>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1822" data-image-height="388">
@@ -117,7 +122,6 @@
             <div class="u-layout-col">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-align-center u-text u-text-default u-text-1">Where my code lives?</h1>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1872" data-image-height="300">
@@ -126,12 +130,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-section-6" src="" id="sec-d59c">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-text-1">Thoughts on Product?</h1>
-        <img class="u-expanded-width u-image u-image-contain u-image-default u-image-1" src="images/image-11.png" alt="" data-image-width="1686" data-image-height="168">
       </div>
     </section>
     <section class="u-clearfix u-section-7" id="sec-b8ff">
@@ -146,11 +144,13 @@
               </div>
               <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-1">Contact?</h2>
-                  <a href="mailto:hello@relan.io?subject=Reaching out from relan.io" class="u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/3536505.png" alt=""></span>
-                  </a>
-                  <a target="_blank" href="https://calendly.com/skrelan/coffee-chat" class="u-border-none u-btn u-button-style u-none u-btn-2">&nbsp;<span class="u-file-icon u-icon u-icon-2"><img src="images/2099100.png" alt=""></span>
-                  </a>
+                  <img class="u-expanded-width u-image u-image-contain u-image-default u-image-2" src="images/image-11.png" alt="" data-image-width="1686" data-image-height="168">
+                  <div class="contact-actions">
+                    <a href="mailto:hello@relan.io?subject=Reaching out from relan.io" class="u-border-none u-btn u-button-style u-none u-btn-1"><span class="u-file-icon u-icon u-icon-1"><img src="images/3536505.png" alt=""></span>
+                    </a>
+                    <a target="_blank" href="https://calendly.com/skrelan/coffee-chat" class="u-border-none u-btn u-button-style u-none u-btn-2">&nbsp;<span class="u-file-icon u-icon u-icon-2"><img src="images/2099100.png" alt=""></span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,7 +159,127 @@
       </div>
     </section>
        <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-675a"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-align-center u-small-text u-text u-text-variant u-text-1">&nbsp;Suryaa Kumara Relan</p>
+       <p class="u-align-center u-small-text u-text u-text-variant u-text-1">&nbsp;Suryaa Kumara Relan</p>
       </div></footer>
-  
+    <script>
+      (function () {
+        var heroSection = document.getElementById('sec-b6ba');
+        var nav = document.querySelector('.glass-nav');
+        var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
+        var indicator = nav ? nav.querySelector('.glass-nav-indicator') : null;
+
+        function updateIndicator(activeLink) {
+          if (!nav || !indicator || !activeLink) {
+            return;
+          }
+
+          navLinks.forEach(function (link) {
+            link.classList.toggle('is-active', link === activeLink);
+          });
+
+          indicator.style.width = activeLink.offsetWidth + 'px';
+          indicator.style.height = activeLink.offsetHeight + 'px';
+          indicator.style.transform =
+            'translate(' + activeLink.offsetLeft + 'px, ' + activeLink.offsetTop + 'px)';
+
+          if (nav.scrollWidth > nav.clientWidth) {
+            activeLink.scrollIntoView({
+              behavior: 'auto',
+              block: 'nearest',
+              inline: 'center'
+            });
+          }
+        }
+
+        if (navLinks.length) {
+          updateIndicator(navLinks[0]);
+          window.addEventListener('resize', function () {
+            var current = nav.querySelector('a.is-active') || navLinks[0];
+            updateIndicator(current);
+          });
+        }
+
+        if (!heroSection || !('IntersectionObserver' in window)) {
+          document.body.classList.add('show-glass-nav');
+          if (navLinks.length) {
+            updateIndicator(navLinks[0]);
+          }
+          return;
+        }
+
+        var heroObserver = new IntersectionObserver(
+          function (entries) {
+            var entry = entries[0];
+            document.body.classList.toggle('show-glass-nav', !entry.isIntersecting);
+          },
+          {
+            threshold: 0.2
+          }
+        );
+
+        heroObserver.observe(heroSection);
+
+        var trackedSections = navLinks
+          .map(function (link) {
+            var section = document.querySelector(link.getAttribute('href'));
+            return section
+              ? {
+                  link: link,
+                  section: section
+                }
+              : null;
+          })
+          .filter(Boolean);
+
+        var ticking = false;
+
+        function updateActiveSection() {
+          if (!trackedSections.length) {
+            return;
+          }
+
+          var viewportTarget = window.innerHeight * 0.42;
+          var bestMatch = trackedSections
+            .map(function (item) {
+              var rect = item.section.getBoundingClientRect();
+              var sectionMidpoint = rect.top + rect.height / 2;
+              var distance = Math.abs(sectionMidpoint - viewportTarget);
+
+              return {
+                link: item.link,
+                distance: distance
+              };
+            })
+            .sort(function (a, b) {
+              return a.distance - b.distance;
+            })[0];
+
+          if (bestMatch && bestMatch.link) {
+            updateIndicator(bestMatch.link);
+          }
+        }
+
+        function requestActiveSectionUpdate() {
+          if (ticking) {
+            return;
+          }
+
+          ticking = true;
+          window.requestAnimationFrame(function () {
+            updateActiveSection();
+            ticking = false;
+          });
+        }
+
+        navLinks.forEach(function (link) {
+          link.addEventListener('click', function () {
+            updateIndicator(link);
+          });
+        });
+
+        updateActiveSection();
+        window.addEventListener('scroll', requestActiveSectionUpdate, { passive: true });
+        window.addEventListener('resize', requestActiveSectionUpdate);
+      })();
+    </script>
 </body></html>

@@ -7,6 +7,15 @@
     <title>Hello!</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <style>
+.u-section-1 {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(255, 223, 154, 0.18), rgba(255, 223, 154, 0) 28%),
+    radial-gradient(circle at 84% 18%, rgba(207, 227, 255, 0.18), rgba(207, 227, 255, 0) 26%),
+    linear-gradient(180deg, rgba(255, 252, 248, 0.98), rgba(255, 255, 255, 0.94));
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 430px;
 }
@@ -143,47 +152,98 @@ body.show-glass-nav .glass-nav {
 }
 
 .u-section-1 .u-layout-wrap-1 {
-  margin-top: 60px;
+  margin-top: 72px;
   margin-bottom: 60px;
   position: relative;
 }
 
+.u-section-1 .hero-card {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 42px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 251, 243, 0.56)),
+    rgba(255, 255, 255, 0.62);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 24px 60px rgba(15, 23, 42, 0.10),
+    0 10px 30px rgba(227, 184, 92, 0.10);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+.u-section-1 .hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -18% auto auto -12%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 223, 154, 0.44), rgba(255, 223, 154, 0) 68%);
+  pointer-events: none;
+}
+
+.u-section-1 .hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -26% auto;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(210, 226, 255, 0.34), rgba(210, 226, 255, 0) 70%);
+  pointer-events: none;
+}
+
 .u-section-1 .u-layout-cell-1 {
-  min-height: 400px;
+  min-height: 440px;
 }
 
 .u-section-1 .u-container-layout-1 {
-  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 30px 36px 42px;
 }
 
 .u-section-1 .u-image-1 {
-  width: 323px;
-  height: 323px;
-  margin: 27px auto 0 81px;
+  width: min(100%, 380px);
+  height: auto;
+  margin: 0;
+  filter: drop-shadow(0 18px 28px rgba(15, 23, 42, 0.10));
 }
 
 .u-section-1 .u-layout-cell-2 {
-  min-height: 400px;
+  min-height: 440px;
 }
 
 .u-section-1 .u-container-layout-2 {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 48px 56px 48px 18px;
 }
 
 .u-section-1 .u-text-1 {
-  margin: 160px auto 0;
+  margin: 0;
+  font-size: clamp(3.5rem, 7vw, 5.8rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
 }
 
 .u-section-1 .u-text-2 {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
+  margin: 0;
+  font-size: clamp(1.1rem, 1.9vw, 1.5rem);
+  line-height: 1.45;
+  color: rgba(17, 17, 17, 0.88);
 }
 
 .u-section-1 .u-image-2 {
   width: 29px;
   height: 45px;
-  margin: 30px auto 60px 0;
+  margin: 18px auto 0 24px;
+  opacity: 0.42;
 }
 
 @media (max-width: 1199px) {
@@ -191,13 +251,17 @@ body.show-glass-nav .glass-nav {
     margin-bottom: 0;
   }
 
+  .u-section-1 .hero-card {
+    border-radius: 36px;
+  }
+
   .u-section-1 .u-layout-cell-1 {
-    min-height: 333px;
+    min-height: 380px;
     background-position: 50% 50%;
   }
 
   .u-section-1 .u-layout-cell-2 {
-    min-height: 330px;
+    min-height: 380px;
   }
 }
 
@@ -206,14 +270,21 @@ body.show-glass-nav .glass-nav {
     min-height: 352px;
   }
 
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 28px;
+    padding-right: 18px;
+  }
+
   .u-section-1 .u-image-1 {
-    width: 300px;
-    height: 300px;
-    margin-left: 0;
+    width: min(100%, 320px);
   }
 
   .u-section-1 .u-layout-cell-2 {
     min-height: 100px;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding: 40px 36px 40px 8px;
   }
 }
 
@@ -222,41 +293,108 @@ body.show-glass-nav .glass-nav {
     min-height: 580px;
   }
 
+  .u-section-1 .u-layout-wrap-1 {
+    margin-top: 40px;
+  }
+
+  .u-section-1 .hero-card {
+    border-radius: 30px;
+  }
+
   .u-section-1 .u-layout-cell-1 {
-    min-height: 380px;
+    min-height: 330px;
   }
 
   .u-section-1 .u-container-layout-1 {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 34px 18px 10px;
   }
 
   .u-section-1 .u-container-layout-2 {
-    padding-left: 10px;
-    padding-right: 10px;
+    align-items: center;
+    padding: 10px 20px 38px;
+    text-align: center;
+  }
+
+  .u-section-1 .u-text-1,
+  .u-section-1 .u-text-2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .u-section-1 .u-image-2 {
+    display: none;
   }
 }
 
 @media (max-width: 575px) {
   .glass-nav {
-    top: 12px;
-    gap: 8px;
-    padding: 10px;
-    border-radius: 28px;
+    top: 50%;
+    left: 12px;
+    right: auto;
+    transform: translateY(calc(-50% - 18px)) scale(0.96);
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 6px;
+    width: auto;
+    max-width: 132px;
+    margin: 0;
+    padding: 8px 10px;
+    border-radius: 24px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    overflow: visible;
+    white-space: normal;
+  }
+
+  body.show-glass-nav .glass-nav {
+    transform: translateY(-50%) scale(1);
   }
 
   .glass-nav a {
-    min-height: 40px;
+    width: 100%;
+    min-height: 36px;
     padding: 0 12px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  .glass-nav-indicator {
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      inset 0 12px 18px rgba(255, 233, 178, 0.26),
+      0 8px 18px rgba(227, 184, 92, 0.12);
   }
 
   .u-section-1 .u-sheet-1 {
     min-height: 438px;
   }
 
+  .u-section-1 .u-layout-wrap-1 {
+    margin-top: 22px;
+  }
+
+  .u-section-1 .hero-card {
+    border-radius: 24px;
+  }
+
   .u-section-1 .u-layout-cell-1 {
-    min-height: 333px;
+    min-height: 270px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding: 24px 14px 0;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    gap: 10px;
+    padding: 6px 18px 28px;
+  }
+
+  .u-section-1 .u-text-1 {
+    font-size: clamp(2.7rem, 13vw, 3.6rem);
+  }
+
+  .u-section-1 .u-text-2 {
+    font-size: 1rem;
   }
 }.u-section-2 .u-sheet-1 {
   min-height: 500px;
@@ -855,15 +993,15 @@ body.show-glass-nav .glass-nav {
     </nav>
     <section class="u-clearfix u-section-1" id="sec-b6ba">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1 hero-card">
           <div class="u-layout">
             <div class="u-layout-row">
-              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1 hero-visual">
                 <div class="u-container-layout u-container-layout-1">
                   <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="images/image.png" alt="" data-image-width="421" data-image-height="421">
                 </div>
               </div>
-              <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+              <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2 hero-copy">
                 <div class="u-container-layout u-container-layout-2">
                   <h1 class="u-text u-text-default u-title u-text-1">Hello there!</h1>
                   <h6 class="u-text u-text-default u-text-2">&nbsp;Bonjour •&nbsp;नमस्ते •&nbsp;привет •&nbsp;你好 •&nbsp;ನಮಸ್ಕಾರ • Hola&nbsp;&nbsp;<br>

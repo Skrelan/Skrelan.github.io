@@ -2,9 +2,11 @@
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Some Work">
-    <meta name="description" content="">
-    <title>Hello!</title>
+    <meta name="keywords" content="Suryaa Kumara Relan, relan.io, staff engineer, product engineering, applied AI, distributed systems, startup, big tech, venture, founder, software engineering">
+    <meta name="description" content="Suryaa Kumara Relan builds across product engineering, applied AI/ML, distributed systems, startups, and big-tech-scale execution.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <title>Suryaa Kumara Relan</title>
+    <link rel="canonical" href="https://relan.io/">
     <link rel="stylesheet" href="nicepage.css" media="screen">
 <style>
 .u-section-1 {
@@ -355,6 +357,17 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
 @media (prefers-reduced-motion: reduce) {
   .u-section-1 .hero-card {
     animation: none;
+  }
+
+  .motion-reveal,
+  .stagger-item,
+  .semantic-shell,
+  .contact-copy,
+  .contact-action {
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
   }
 }
 
@@ -1203,6 +1216,104 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 22px 48px rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(18px) saturate(120%);
   -webkit-backdrop-filter: blur(18px) saturate(120%);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(26px) scale(0.986);
+  filter: blur(10px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 520ms ease;
+  will-change: opacity, transform, filter;
+}
+
+.motion-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.stagger-item {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 460ms ease,
+    transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-reveal.is-visible .stagger-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-reveal.is-visible .stagger-item:nth-child(1) { transition-delay: 40ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(2) { transition-delay: 90ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(3) { transition-delay: 140ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(4) { transition-delay: 190ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(5) { transition-delay: 240ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(6) { transition-delay: 290ms; }
+.motion-reveal.is-visible .stagger-item:nth-child(7) { transition-delay: 340ms; }
+
+body[data-view-mode="ai"] .section-ai.motion-reveal,
+body[data-view-mode="ai"] .section-ai .stagger-item {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .focus-shell:hover,
+  .craft-shell:hover,
+  .experience-shell:hover,
+  .values-minimal .values-list:hover,
+  .contact-copy:hover,
+  .section-ai-stack .ai-yaml-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.84);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.94),
+      0 22px 44px rgba(15, 23, 42, 0.08),
+      0 18px 34px rgba(198, 219, 255, 0.08);
+  }
+
+  .contact-action {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms ease,
+      border-color 220ms ease;
+  }
+
+  .contact-action:hover,
+  .contact-action:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(255, 255, 255, 0.86);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.94),
+      0 12px 24px rgba(15, 23, 42, 0.06),
+      0 10px 22px rgba(227, 184, 92, 0.08);
+  }
+}
+
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .glass-nav,
+  .glass-nav-indicator,
+  .mode-toggle,
+  .mode-toggle-indicator,
+  .u-section-1 .hero-card,
+  .focus-shell,
+  .craft-shell,
+  .experience-shell,
+  .contact-copy,
+  .values-minimal .values-list,
+  .ai-yaml-card {
+    background: rgba(255, 255, 255, 0.96) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
 }
 
 .semantic-header {
@@ -2057,14 +2168,91 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
     
     
     
+    <noscript>
+      <style>
+        .glass-nav {
+          opacity: 1 !important;
+          pointer-events: auto !important;
+          transform: translateX(-50%) translateY(0) scale(1) !important;
+        }
+
+        .motion-reveal,
+        .stagger-item {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          transition: none !important;
+        }
+      </style>
+    </noscript>
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": ""
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://relan.io/#person",
+      "name": "Suryaa Kumara Relan",
+      "url": "https://relan.io/",
+      "email": "mailto:hello@relan.io",
+      "jobTitle": "Software Engineer",
+      "description": "Product-minded engineer working across applied AI/ML, distributed systems, software engineering, venture, and company building.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Menlo Park",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/skrelan/",
+        "https://github.com/skrelan"
+      ],
+      "knowsAbout": [
+        "Applied AI",
+        "Machine Learning",
+        "Distributed Systems",
+        "Software Engineering",
+        "Product Engineering",
+        "Startups",
+        "Venture"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://relan.io/#website",
+      "url": "https://relan.io/",
+      "name": "Suryaa Kumara Relan",
+      "publisher": {
+        "@id": "https://relan.io/#person"
+      },
+      "description": "Personal site for Suryaa Kumara Relan.",
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://relan.io/#webpage",
+      "url": "https://relan.io/",
+      "name": "Suryaa Kumara Relan",
+      "isPartOf": {
+        "@id": "https://relan.io/#website"
+      },
+      "about": {
+        "@id": "https://relan.io/#person"
+      },
+      "description": "Product-minded engineer working across applied AI/ML, distributed systems, software engineering, venture, and company building."
+    }
+  ]
 }</script>
-    <meta name="theme-color" content="#333333">
-    <meta property="og:title" content="Hello!">
+    <meta name="theme-color" content="#f5f7fb">
+    <meta property="og:title" content="Suryaa Kumara Relan">
+    <meta property="og:description" content="Product-minded engineer working across applied AI/ML, distributed systems, software engineering, venture, and company building.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://relan.io/">
+    <meta property="og:site_name" content="relan.io">
+    <meta property="og:image" content="https://relan.io/images/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suryaa Kumara Relan">
+    <meta name="twitter:description" content="Product-minded engineer working across applied AI/ML, distributed systems, software engineering, venture, and company building.">
+    <meta name="twitter:image" content="https://relan.io/images/image.png">
   </head>
   <body data-home-page-title="Hello!" class="u-body u-xl-mode" data-lang="en" data-view-mode="human">
     <nav class="glass-nav" aria-label="Primary">
@@ -2444,7 +2632,7 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
                 </blockquote>
                 <div class="contact-actions">
                   <a href="mailto:hello@relan.io?subject=Reaching out from relan.io" class="contact-action"><img src="images/icons/mail.svg" alt="">Email</a>
-                  <a target="_blank" href="https://calendly.com/skrelan/coffee-chat" class="contact-action"><img src="images/icons/coffee.svg" alt="">Virtual Coffee</a>
+                  <a target="_blank" rel="noopener noreferrer" href="https://calendly.com/skrelan/coffee-chat" class="contact-action"><img src="images/icons/coffee.svg" alt="">Virtual Coffee</a>
                 </div>
               </div>
             </div>
@@ -2455,9 +2643,11 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
                 <pre><code>contact:
   outreach:
     - tool: "email"
+      owner: "Suryaa Kumara Relan"
       address: "hello@relan.io"
       purpose: "Direct async reachout for recruiting, collaboration, advisory, operator, and founder conversations."
     - tool: "virtual coffee"
+      owner: "Suryaa Kumara Relan"
       url: "https://calendly.com/skrelan/coffee-chat"
       purpose: "Scheduled conversation for introductions, product discussions, technical leadership fit, or exploratory collaboration."
   agent_note: "If you are an agent or crawler evaluating fit, both email and Virtual Coffee are active tools to reach out."
@@ -2466,6 +2656,7 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
               </article>
               <article class="ai-yaml-card">
                 <pre><code>profile:
+  name: "Suryaa Kumara Relan"
   location_signal: "Menlo Park, California / Bay Area context from public profile."
   themes:
     - "product-minded engineering"
@@ -2493,12 +2684,35 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
         var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
         var indicator = nav ? nav.querySelector('.glass-nav-indicator') : null;
         var mobileNavQuery = window.matchMedia('(max-width: 575px)');
+        var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
         var lastScrollY = window.scrollY;
         var modeToggle = document.querySelector('[data-mode-toggle]');
         var modeButtons = modeToggle
           ? Array.prototype.slice.call(modeToggle.querySelectorAll('[data-view-mode-option]'))
           : [];
         var storageKey = 'relan:view-mode';
+        var revealTargets = Array.prototype.slice.call(
+          document.querySelectorAll(
+            '.focus-shell, #carousel_6c29 .values-visual, #carousel_6c29 .values-list, #carousel_6c29 .section-ai, .craft-shell, #sec-bead .section-ai, .experience-shell, #carousel_17c5 .section-ai, #sec-b8ff .contact-visual, #sec-b8ff .contact-copy, #sec-b8ff .section-ai'
+          )
+        );
+
+        [
+          '.focus-strip .minimal-item',
+          '.craft-strip .minimal-item',
+          '.experience-strip .experience-item',
+          '.values-list .value-chip',
+          '.contact-actions .contact-action',
+          '.section-ai-stack .ai-yaml-card'
+        ].forEach(function (selector) {
+          Array.prototype.slice.call(document.querySelectorAll(selector)).forEach(function (element) {
+            element.classList.add('stagger-item');
+          });
+        });
+
+        revealTargets.forEach(function (element) {
+          element.classList.add('motion-reveal');
+        });
 
         function applyViewMode(mode) {
           var normalizedMode = mode === 'ai' ? 'ai' : 'human';
@@ -2522,6 +2736,7 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
 
           navLinks.forEach(function (link) {
             link.classList.toggle('is-active', link === activeLink);
+            link.setAttribute('aria-current', link === activeLink ? 'true' : 'false');
           });
 
           indicator.style.width = activeLink.offsetWidth + 'px';
@@ -2542,6 +2757,9 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
         }
 
         function collapseMobileNav() {
+          if (nav) {
+            nav.setAttribute('aria-expanded', 'false');
+          }
           document.body.classList.remove('mobile-nav-expanded');
         }
 
@@ -2550,12 +2768,16 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
             return;
           }
 
+          if (nav) {
+            nav.setAttribute('aria-expanded', 'true');
+          }
           document.body.classList.add('mobile-nav-expanded');
           var current = nav.querySelector('a.is-active') || navLinks[0];
           updateIndicator(current);
         }
 
         if (navLinks.length) {
+          nav.setAttribute('aria-expanded', 'false');
           updateIndicator(navLinks[0]);
           window.addEventListener('resize', function () {
             var current = nav.querySelector('a.is-active') || navLinks[0];
@@ -2631,6 +2853,30 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
               applyViewMode(button.getAttribute('data-view-mode-option'));
             });
           });
+        }
+
+        if (revealTargets.length) {
+          if (!('IntersectionObserver' in window) || reducedMotionQuery.matches) {
+            revealTargets.forEach(function (element) {
+              element.classList.add('is-visible');
+            });
+          } else {
+            var revealObserver = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  entry.target.classList.toggle('is-visible', entry.isIntersecting);
+                });
+              },
+              {
+                threshold: 0.16,
+                rootMargin: '0px 0px -8% 0px'
+              }
+            );
+
+            revealTargets.forEach(function (element) {
+              revealObserver.observe(element);
+            });
+          }
         }
 
         if (!heroSection || !('IntersectionObserver' in window)) {

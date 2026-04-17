@@ -441,33 +441,36 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
 
 @media (max-width: 575px) {
   .glass-nav {
-    top: 50%;
-    left: 12px;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    left: 50%;
     right: auto;
-    transform: translateY(calc(-50% - 18px)) scale(0.96);
-    justify-content: center;
-    flex-direction: column;
+    transform: translateX(-50%) translateY(-16px) scale(0.96);
+    justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: nowrap;
-    gap: 6px;
-    width: auto;
-    max-width: 132px;
+    gap: 8px;
+    width: min(calc(100vw - 24px), max-content);
+    max-width: calc(100vw - 24px);
     margin: 0;
-    padding: 8px 10px;
-    border-radius: 24px;
+    padding: 10px;
+    border-radius: 28px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-    overflow: visible;
-    white-space: normal;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
   }
 
   body.show-glass-nav .glass-nav {
-    transform: translateY(-50%) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 
   .glass-nav a {
-    width: 100%;
-    min-height: 36px;
-    padding: 0 12px;
-    font-size: 0.88rem;
+    width: auto;
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.92rem;
   }
 
   .glass-nav-indicator {
@@ -482,6 +485,53 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
 
   .glass-nav a.is-active {
     text-shadow: none;
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav {
+    left: 50%;
+    right: auto;
+    width: fit-content;
+    max-width: calc(100vw - 24px);
+    gap: 10px;
+    padding: 8px 12px;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-16px) scale(0.96);
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav a {
+    flex: 0 0 auto;
+    min-height: 14px;
+    min-width: 14px;
+    width: 14px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    transition: background 180ms ease, transform 180ms ease;
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav a.is-active {
+    width: auto;
+    min-width: 0;
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 0.92rem;
+    line-height: 1;
+    color: #111111;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 232, 0.86)),
+      rgba(250, 245, 232, 0.78);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 10px 16px rgba(255, 233, 178, 0.24),
+      0 8px 18px rgba(227, 184, 92, 0.14);
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav-indicator {
+    opacity: 0 !important;
   }
 
   .u-section-1 .u-sheet-1 {
@@ -1021,33 +1071,36 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
 
 @media (max-width: 575px) {
   .glass-nav {
-    top: 50%;
-    left: 12px;
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    left: 50%;
     right: auto;
-    transform: translateY(calc(-50% - 18px)) scale(0.96);
-    justify-content: center;
-    flex-direction: column;
+    transform: translateX(-50%) translateY(-16px) scale(0.96);
+    justify-content: flex-start;
+    flex-direction: row;
     flex-wrap: nowrap;
-    gap: 6px;
-    width: auto;
-    max-width: 132px;
+    gap: 8px;
+    width: min(calc(100vw - 24px), max-content);
+    max-width: calc(100vw - 24px);
     margin: 0;
-    padding: 8px 10px;
-    border-radius: 24px;
+    padding: 10px;
+    border-radius: 28px;
     box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
-    overflow: visible;
-    white-space: normal;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
   }
 
   body.show-glass-nav .glass-nav {
-    transform: translateY(-50%) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 
   .glass-nav a {
-    width: 100%;
-    min-height: 36px;
-    padding: 0 12px;
-    font-size: 0.88rem;
+    width: auto;
+    flex: 0 0 auto;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.92rem;
   }
 
   .glass-nav-indicator {
@@ -1055,6 +1108,53 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
       inset 0 1px 0 rgba(255, 255, 255, 0.88),
       inset 0 12px 18px rgba(255, 233, 178, 0.26),
       0 8px 18px rgba(227, 184, 92, 0.12);
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav {
+    left: 50%;
+    right: auto;
+    width: fit-content;
+    max-width: calc(100vw - 24px);
+    gap: 10px;
+    padding: 8px 12px;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-16px) scale(0.96);
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav a {
+    flex: 0 0 auto;
+    min-height: 14px;
+    min-width: 14px;
+    width: 14px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.18);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
+    transition: background 180ms ease, transform 180ms ease;
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav a.is-active {
+    width: auto;
+    min-width: 0;
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 0.92rem;
+    line-height: 1;
+    color: #111111;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(250, 245, 232, 0.86)),
+      rgba(250, 245, 232, 0.78);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      inset 0 10px 16px rgba(255, 233, 178, 0.24),
+      0 8px 18px rgba(227, 184, 92, 0.14);
+  }
+
+  body:not(.mobile-nav-expanded) .glass-nav-indicator {
+    opacity: 0 !important;
   }
 
   .u-section-7 .u-layout-cell-1 {
@@ -2392,6 +2492,8 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
         var nav = document.querySelector('.glass-nav');
         var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll('a')) : [];
         var indicator = nav ? nav.querySelector('.glass-nav-indicator') : null;
+        var mobileNavQuery = window.matchMedia('(max-width: 575px)');
+        var lastScrollY = window.scrollY;
         var modeToggle = document.querySelector('[data-mode-toggle]');
         var modeButtons = modeToggle
           ? Array.prototype.slice.call(modeToggle.querySelectorAll('[data-view-mode-option]'))
@@ -2427,7 +2529,10 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
           indicator.style.transform =
             'translate(' + activeLink.offsetLeft + 'px, ' + activeLink.offsetTop + 'px)';
 
-          if (nav.scrollWidth > nav.clientWidth) {
+          if (
+            nav.scrollWidth > nav.clientWidth &&
+            (!mobileNavQuery.matches || document.body.classList.contains('mobile-nav-expanded'))
+          ) {
             activeLink.scrollIntoView({
               behavior: 'auto',
               block: 'nearest',
@@ -2436,12 +2541,80 @@ body[data-view-mode="ai"] .mode-toggle-indicator {
           }
         }
 
+        function collapseMobileNav() {
+          document.body.classList.remove('mobile-nav-expanded');
+        }
+
+        function expandMobileNav() {
+          if (!mobileNavQuery.matches) {
+            return;
+          }
+
+          document.body.classList.add('mobile-nav-expanded');
+          var current = nav.querySelector('a.is-active') || navLinks[0];
+          updateIndicator(current);
+        }
+
         if (navLinks.length) {
           updateIndicator(navLinks[0]);
           window.addEventListener('resize', function () {
             var current = nav.querySelector('a.is-active') || navLinks[0];
+            if (!mobileNavQuery.matches) {
+              collapseMobileNav();
+            }
             updateIndicator(current);
           });
+        }
+
+        if (nav) {
+          nav.addEventListener('click', function (event) {
+            var link = event.target.closest('a');
+
+            if (!mobileNavQuery.matches || !link) {
+              return;
+            }
+
+            if (!document.body.classList.contains('mobile-nav-expanded')) {
+              event.preventDefault();
+              expandMobileNav();
+              return;
+            }
+
+            window.setTimeout(collapseMobileNav, 0);
+          });
+
+          document.addEventListener('click', function (event) {
+            if (!mobileNavQuery.matches) {
+              return;
+            }
+
+            if (!nav.contains(event.target)) {
+              collapseMobileNav();
+            }
+          });
+
+          document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+              collapseMobileNav();
+            }
+          });
+
+          window.addEventListener(
+            'scroll',
+            function () {
+              if (!mobileNavQuery.matches || !document.body.classList.contains('mobile-nav-expanded')) {
+                lastScrollY = window.scrollY;
+                return;
+              }
+
+              if (Math.abs(window.scrollY - lastScrollY) > 8) {
+                collapseMobileNav();
+              }
+
+              lastScrollY = window.scrollY;
+            },
+            { passive: true }
+          );
         }
 
         if (modeButtons.length) {
